@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Seat Arrangement</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="title">
+      <h1>조 & 자리 바꾸기</h1>
+      <p>BSSM 1학년 2반 20번 이형민 제작 👍</p>
+    </div>
+
+    <main class="container">
+      <table class="class_table">
+        <tbody id="seats-table">
+          <!-- Dynamic table rows will be inserted here -->
+        </tbody>
+      </table>
+
+      <div id="inputHolder">
+        <form id="inputForm">
+          <input type="number" id="lineNumber" placeholder="줄 수를 입력하세요" required>
+          <input type="number" id="studentNumber" placeholder="학생 수를 입력하세요" required>
+        </form>
+
+        <form id="resetForm">
+          <button type="submit">리셋</button>
+        </form>
+
+        <form id="shuffleForm">
+          <button type="submit">랜덤</button>
+        </form>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
