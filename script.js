@@ -53,11 +53,21 @@ function updateTable() {
       inputElement.addEventListener('click', (event) => onClickCell(event, rowIndex, colIndex));
       inputElement.addEventListener('dblclick', () => onDoubleClick(inputElement));
       inputElement.addEventListener('input', (event) => onInputChange(event, rowIndex, colIndex));
+      inputElement.addEventListener("keydown", onInputKeydown);
       cellElement.appendChild(inputElement);
       rowElement.appendChild(cellElement);
     });
     tableBody.appendChild(rowElement);
   });
+}
+
+function onInputKeydown(event) {
+  let eventTarget = event.target;
+  if (event.key === "Enter") {
+    event.target.blur(); // Enter 누르면 포커스 해제
+    activeCell = null; // active 상태 초기화
+    eventTarget.classList.remove("active");
+  }
 }
 
 function onClickCell(event, row, col) {
